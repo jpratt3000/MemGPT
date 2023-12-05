@@ -3,6 +3,8 @@ import os
 MEMGPT_DIR = os.path.join(os.path.expanduser("~"), ".memgpt")
 
 DEFAULT_MEMGPT_MODEL = "gpt-4"
+DEFAULT_PERSONA = "sam_pov"
+DEFAULT_HUMAN = "basic"
 
 FIRST_MESSAGE_ATTEMPTS = 10
 
@@ -14,6 +16,8 @@ STARTUP_QUOTES = [
     "More human than human is our motto.",
 ]
 INITIAL_BOOT_MESSAGE_SEND_MESSAGE_FIRST_MSG = STARTUP_QUOTES[2]
+
+CLI_WARNING_PREFIX = "Warning: "
 
 # Constants to do with summarization / conversation length window
 # The max amount of tokens supported by the underlying model (eg 8k for gpt-4 and Mistral 7B)
@@ -60,4 +64,7 @@ MESSAGE_CHATGPT_FUNCTION_SYSTEM_MESSAGE = "You are a helpful assistant. Keep you
 
 REQ_HEARTBEAT_MESSAGE = "request_heartbeat == true"
 FUNC_FAILED_HEARTBEAT_MESSAGE = "Function call failed"
+FUNCTION_PARAM_NAME_REQ_HEARTBEAT = "request_heartbeat"
+FUNCTION_PARAM_TYPE_REQ_HEARTBEAT = "boolean"
 FUNCTION_PARAM_DESCRIPTION_REQ_HEARTBEAT = "Request an immediate heartbeat after function execution. Set to 'true' if you want to send a follow-up message or run a follow-up function."
+RETRIEVAL_QUERY_DEFAULT_PAGE_SIZE = 5
